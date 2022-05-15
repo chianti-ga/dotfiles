@@ -8,5 +8,4 @@ function install {
     typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 }
 
-ask_remove_zsh
 install
