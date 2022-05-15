@@ -1,15 +1,5 @@
 #!/bin/bash
 
-function ask_remove_zsh {
-  echo "shjkl"
-  local response && read response
-  if [[ $response == "y" || $response == "Y" || $response == "yes" || $response == "Yes" ]]
-  then rm
-  fi
-}
-
-function install {
-  chsh -s /bin/zsh
-}
-
-exit 0
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+cp .zshrc ~
