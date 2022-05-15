@@ -13,7 +13,7 @@ function remove_zsh {
     fi
 
     if [[ grep -q "Arch" <<< lsb_release -a; || grep -q "Manjaro" <<< lsb_release -a;]]
-    then chsh -s $(which bash); 
+    then sudo pacman -Rsn zsh; chsh -s $(which bash)
     fi
 }
 
