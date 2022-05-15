@@ -77,7 +77,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git encode64 colorize docker copypath perms tmux jenv kubectl)
+plugins=(git encode64 colorize docker copypath perms jenv kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='vim'
+export EDITOR='nano'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
