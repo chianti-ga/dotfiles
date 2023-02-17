@@ -9,3 +9,4 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 rm ~/.zshrc; cp .zshrc ~
 rm ~/.p10k.zsh; cp .p10k.zsh ~
 rm ~/.tmux.conf; cp .tmux.conf ~
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
