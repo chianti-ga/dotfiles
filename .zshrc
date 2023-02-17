@@ -1,3 +1,5 @@
+[[ $TERM != "screen" ]] && exec tmux
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -77,7 +79,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git encode64 colorize docker docker-compose copypath perms jenv kubectl colored-man-pages colorize npm ssh-agent pod ansible)
+plugins=(git encode64 colorize docker docker-compose copypath perms jenv kubectl colored-man-pages colorize npm ssh-agent pod ansible tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,4 +111,4 @@ export EDITOR='nano'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zs
