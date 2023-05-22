@@ -68,7 +68,7 @@ CASE_SENSITIVE="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="dd.mm.yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -78,7 +78,23 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git encode64 colorize docker docker-compose copypath perms jenv kubectl colored-man-pages colorize npm ssh-agent pod ansible tmux)
+plugins=(
+        git
+        encode64
+        colorize
+        docker
+        docker-compose
+        copypath
+        perms
+        jenv
+        kubectl
+        colored-man-pages
+        colorize
+        npm
+        ssh-agent
+        pod
+        ansible
+        tmux)
 
 source $ZSH/oh-my-zsh.sh
 
