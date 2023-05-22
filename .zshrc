@@ -34,10 +34,10 @@ CASE_SENSITIVE="true"
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 1
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -94,11 +94,19 @@ plugins=(
         ssh-agent
         pod
         ansible
-        tmux)
+        tmux
+)
+##########################
+# Oh-my-zsh plugins init #
+##########################
 
-source $ZSH/oh-my-zsh.sh
+# Tmux
+export ZSH_TMUX_AUTOSTART=true
 
-# User configuration
+
+######################
+# User configuration #
+######################
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -113,17 +121,14 @@ source $ZSH/oh-my-zsh.sh
 # fi
 export EDITOR='nano'
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+###################
+# Start OH-MY-ZSH #
+###################
+source $ZSH/oh-my-zsh.sh
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+########################
+# Start PowerLevel 10k #
+########################
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
