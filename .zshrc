@@ -87,7 +87,7 @@ plugins=(
         copypath
         perms
         jenv
-        kubectl
+        #kubectl
         colored-man-pages
         colorize
         npm
