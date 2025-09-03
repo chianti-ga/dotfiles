@@ -95,6 +95,11 @@ plugins=(
         pod
         ansible
         tmux
+        rust
+        archlinux
+        battery
+        golang
+        
 )
 ##########################
 # Oh-my-zsh plugins init #
@@ -119,7 +124,24 @@ export ZSH_TMUX_AUTOSTART=true
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='nano'
+export EDITOR='micro'
+
+##################
+# SSH Agent      #
+##################
+
+if [ -z "$SSH_AUTH_SOCK" ]; then
+# Check for a currently running instance of the agent
+RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
+if [ "$RUNNING_AGENT" = "0" ]; then
+# Launch a new instance of the agent
+ssh-agent -s  > $HOME/.ssh/ssh-agent
+fi
+eval `cat $HOME/.ssh/ssh-agent` > /dev/null
+#ssh-add $HOME/.ssh/<your ssh key> 2> /dev/null
+fi
+
+
 
 ###################
 # Start OH-MY-ZSH #
@@ -132,3 +154,10 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export JAVA_TOOL_OPTIONS="-Dsun.java2d.opengl=True"
+
+
+
+# Created by `pipx` on 2025-02-01 21:13:40
+export PATH="$PATH:/home/chianti/.local/bin"
